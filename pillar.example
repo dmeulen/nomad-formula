@@ -1,0 +1,10 @@
+nomad:
+  service: True
+  config:
+    datacenter: dc1
+    data_dir: /var/lib/nomad
+    server:
+      enabled: True
+      bootstrap_expect: 3
+    client:
+      enabled: False
