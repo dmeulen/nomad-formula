@@ -1,0 +1,8 @@
+{% import_yaml "nomad/defaults.yaml" as defaults %}
+
+{% set nomad = salt['pillar.get']('nomad', default=defaults.nomad, merge=True) %}
+
+{% if not nomad %}
+  {{ salt.test.exception("nomad pillar data missing!") }}
+{% endif %}
+
